@@ -92,6 +92,8 @@ function bevoelkerung(nahrung){
 
   }
 
+    korn = korn - nahrung;
+
   var ausreichendNahrung = Math.round(nahrung / 20) - buerger;
 
   var neueBuerger = 0;

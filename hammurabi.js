@@ -8,6 +8,7 @@ var landPreis;
 var ernteProAcker;
 
 bestimmeLandPreis();
+console.log(korn);
 
 function spieleEineRunde(){
 
@@ -19,8 +20,6 @@ function spieleEineRunde(){
     bestimmeLandPreis();
     erstelleBericht();
     pruefeEnde();
-
-    console.log(jahr);
 
   }
 
@@ -57,17 +56,11 @@ function verarbeiteBefehle(){
   aussaat(saeheKorn);
   handel(landKauf);
 
-  console.log(verteileKorn);
-  console.log(saeheKorn);
-  console.log(landKauf);
-
 }
 
 function bestimmeErnteErfolg(){
 
   ernteProAcker = Math.round(Math.random() * 5 + Math.random() * 5 + 0.5);
-
-  console.log("Wie war die Ernte?");
 
 }
 
@@ -88,9 +81,11 @@ function bevoelkerung(nahrung){
 
     nahrung = korn;
 
-    korn -= nahrung;
+    korn = korn - nahrung;
 
   }
+
+  korn = korn - nahrung;
 
   var ausreichendNahrung = Math.round(nahrung / 20) - buerger;
 
